@@ -3,7 +3,7 @@ import { CreateCartDto } from './dto/create-cart.dto';
 import { CartsService } from './carts.service';
 import { Cart } from '../entities/carts.entity';
 
-@Controller('carts')
+@Controller('/api/v1/carts')
 export class CartsController {
 	constructor(private readonly cartsService: CartsService) {}
 

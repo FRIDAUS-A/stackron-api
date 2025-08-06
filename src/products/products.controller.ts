@@ -5,7 +5,7 @@ import { Product } from '../entities/products.entity';
 import { DeleteResult, UpdateResult } from 'typeorm';
 import { UpdateProductDto } from './dto/update-product.dto';
 
-@Controller('products')
+@Controller('/api/v1/products')
 export class ProductsController {
 
 	constructor(private productsService: ProductsService) {}

@@ -28,24 +28,24 @@ describe('CartsController', () => {
     controller = module.get<CartsController>(CartsController);
   });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
+    it('should be defined', () => {
+      expect(controller).toBeDefined();
+    });
 
-  it('should add a product to cart', async () => {
-    const dto: CreateCartDto = {
-      productIds: ['prod123'],
-    };
+    it('should add a product to cart', async () => {
+      const dto: CreateCartDto = {
+        productIds: ['prod123'],
+      };
 
-    await expect(controller.createCart(dto)).resolves.toEqual(
-      expect.objectContaining({
-        cartId: expect.any(String),
-        products: expect.arrayContaining([
-          expect.any(Object),
-        ]),
-      })
-    );
+      await expect(controller.createCart(dto)).resolves.toEqual(
+        expect.objectContaining({
+          cartId: expect.any(String),
+          products: expect.arrayContaining([
+            expect.any(Object),
+          ]),
+        })
+      );
 
-    expect(mockService.create).toHaveBeenCalledWith(dto);
-  });
+      expect(mockService.create).toHaveBeenCalledWith(dto);
+    });
 });
